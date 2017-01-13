@@ -51,12 +51,13 @@ public class ConsumerTest {
         Consumer consumer = new Consumer(brokerUrl);
         consumer.setQueue(queue);
         consumer.setMessageListener(new TextMessageListener());
-        consumer.close();
+
         try {
             Thread.sleep(30000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        consumer.close();
 
     }
 }
